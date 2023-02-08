@@ -1,14 +1,19 @@
 package main
 
 import (
+	"flag"
 	"io"
 	"log"
 	"net"
 	"time"
 )
 
+
 func main() {
-	conn, err := net.Dial("unix", "/tmp/echo.sock")
+	sockAddr:= flag.String("sockAddr", "/tmp/echo.sock", "daemon control listen multiaddr")
+    flag.Parse()
+
+	conn, err := net.Dial("unix", *sockAddr)
 	if err != nil {
 		panic(err)
 	}
