@@ -15,7 +15,7 @@ For start, in the root directory of the cloned repository:
 First, start server and create socket:
 ```golang
 cd ./server
-go run .  // stated server with default socket path
+go run .  // stated server with default socket path, default path: "/tmp/echo.sock"
 or
 go run . -socketAddr= socket path // stated server with special socket path
 ```
